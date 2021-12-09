@@ -1,6 +1,6 @@
 import {Text, TouchableOpacity, View} from 'react-native'
-import RNShake from 'react-native-shake'
 import React, {memo} from 'react'
+import {DebugToolsShaker} from './shaker'
 
 export const DebugtoolsView: React.FC = memo(() => {
   return (
@@ -26,8 +26,7 @@ export class DebugTools {
 
   static init(params: DebugToolsInitParams) {
     this.instance = new DebugTools(params)
-    console.log('🔦 Shake initialized')
-    RNShake.addListener(() => {
+    DebugToolsShaker.addListener(() => {
       console.log('🔦 SHAKE')
     })
   }
