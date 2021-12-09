@@ -12,7 +12,6 @@ import com.facebook.react.bridge.WritableMap;
 import com.facebook.react.modules.core.DeviceEventManagerModule;
 import com.facebook.react.module.annotations.ReactModule;
 
-@ReactModule(name = "RNShakeEvent")
 public class RNShakeEventModule extends ReactContextBaseJavaModule {
     @Nullable
     private CustomShakeDetector mShakeDetector = null;
@@ -26,16 +25,16 @@ public class RNShakeEventModule extends ReactContextBaseJavaModule {
 
     @Override
     public void initialize() {
-        assert reactContext != null;
-        mShakeDetector = new CustomShakeDetector(new CustomShakeDetector.ShakeListener() {
-            @Override
-            public void onShake() {
-                sendEvent(reactContext, "ShakeEvent", null);
-            }
-        });
-
-        mShakeDetector.start(
-                (SensorManager) reactContext.getSystemService(Context.SENSOR_SERVICE));
+//        assert reactContext != null;
+//        mShakeDetector = new CustomShakeDetector(new CustomShakeDetector.ShakeListener() {
+//            @Override
+//            public void onShake() {
+//                sendEvent(reactContext, "ShakeEvent", null);
+//            }
+//        });
+//
+//        mShakeDetector.start(
+//                (SensorManager) reactContext.getSystemService(Context.SENSOR_SERVICE));
     }
 
     @Override
