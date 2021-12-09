@@ -1,12 +1,22 @@
 import * as React from 'react';
 
-import { StyleSheet, View } from 'react-native';
-import { DebugtoolsView } from 'react-native-debugtools';
+import { Alert, NativeModules, StyleSheet, View } from 'react-native';
+import { DebugTools, DebugtoolsView } from 'react-native-debugtools';
+
+NativeModules.DevSettings.setIsShakeToShowDevMenuEnabled(false);
+
+DebugTools.init({
+  t: () => '---',
+  callback: ()  => {
+    Alert.alert("Callback", "callback")
+  }
+})
+
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <DebugtoolsViewManager color="#32a852" style={styles.box} />
+      <DebugtoolsView color="#32a852" style={styles.box} />
     </View>
   );
 }

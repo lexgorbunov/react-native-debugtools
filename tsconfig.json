@@ -1,27 +1,47 @@
 {
   "compilerOptions": {
+    "module": "esnext",
+    "target": "esnext",
+    "moduleResolution": "node",
     "baseUrl": "./",
+    "jsx": "react",
+    "lib": [
+      "es2018",
+      "dom"
+    ],
     "paths": {
       "react-native-debugtools": ["./src/index"]
     },
+    "outDir": "./dist",
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "strict": true,
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "importsNotUsedAsValues": "error",
+    "experimentalDecorators": true,
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,
     "esModuleInterop": true,
-    "importsNotUsedAsValues": "error",
     "forceConsistentCasingInFileNames": true,
-    "jsx": "react",
-    "lib": ["esnext"],
-    "module": "esnext",
-    "moduleResolution": "node",
     "noFallthroughCasesInSwitch": true,
     "noImplicitReturns": true,
+    "strictFunctionTypes": true,
     "noImplicitUseStrict": false,
     "noStrictGenericChecks": false,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "resolveJsonModule": true,
     "skipLibCheck": true,
-    "strict": true,
-    "target": "esnext"
-  }
+  },
+  "include": [
+    "src/**/*",
+  ],
+  "exclude": [
+    "node_modules",
+    "babel.config.js",
+    "metro.config.js",
+    "jest.config.js",
+  ]
 }
