@@ -4,12 +4,12 @@ import {
   NativeModules,
 } from 'react-native'
 
-const {RNShakeEvent} = NativeModules.RNShakeEvent
-if (!RNShakeEvent) {
+const {RNShakeEventModule} = NativeModules.RNShakeEventModule
+if (!RNShakeEventModule) {
   throw new Error('DT Shaker Linking error')
 }
 
-const shakerEventEmitter = new NativeEventEmitter(RNShakeEvent)
+const shakerEventEmitter = new NativeEventEmitter(RNShakeEventModule)
 
 export const DebugToolsShaker: {
   readonly addListener: (

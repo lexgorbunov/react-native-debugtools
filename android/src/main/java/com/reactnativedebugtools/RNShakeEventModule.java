@@ -39,7 +39,7 @@ public class RNShakeEventModule extends ReactContextBaseJavaModule {
 
     @Override
     public String getName() {
-        return "RNShakeEvent";
+        return "RNShakeEventModule";
     }
 
     private void sendEvent(
