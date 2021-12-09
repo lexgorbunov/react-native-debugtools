@@ -1,6 +1,5 @@
 import {Text, TouchableOpacity, View} from 'react-native'
 import React, {memo} from 'react'
-import {DebugToolsShaker} from './shaker'
 
 export const DebugtoolsView: React.FC = memo(() => {
   return (
@@ -26,9 +25,9 @@ export class DebugTools {
 
   static init(params: DebugToolsInitParams) {
     this.instance = new DebugTools(params)
-    DebugToolsShaker.addListener(() => {
-      console.log('🔦 SHAKE')
-    })
+    // DebugToolsShaker.addListener(() => {
+    //   console.log('🔦 SHAKE')
+    // })
   }
 
   private static get params(): DebugToolsInitParams {
